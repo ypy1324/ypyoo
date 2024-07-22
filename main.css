@@ -1,0 +1,408 @@
+@charset 'utf-8';
+
+html,
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+code,
+img,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+legend,
+caption {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+div,
+span,
+article,
+section,
+header,
+footer,
+p,
+ul,
+li,
+fieldset,
+legend,
+label,
+a,
+nav,
+h1,
+h2,
+h3 {
+  box-sizing: border-box;
+}
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+ol,
+ul,
+li {
+  list-style: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+html {
+  font-size: 20px;
+  font-family: Roboto;
+  line-height: 1.6;
+}
+
+body {
+  color: white;
+  background: dodgerblue;
+}
+
+li {
+  list-style-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23808"><path d="M9 19c-.26 0-.51-.1-.71-.29l-6-6A.996.996 0 1 1 3.7 11.3l5.29 5.29L20.28 5.3a.996.996 0 1 1 1.41 1.41l-12 12c-.2.2-.45.29-.71.29Z"></path></svg>');
+}
+
+li::marker {
+  font-size: 0.7rem;
+  line-height: 0.8;
+}
+
+.wrap {
+  contain: paint;
+}
+
+.header {
+  height: 400px;
+  padding: 2rem;
+}
+
+.main-copy {
+  font-size: 3rem;
+}
+
+.airstrip {
+  position: absolute;
+  top: 0;
+  width: 7px;
+  height: 700px;
+  margin-top: 400px;
+  background: white;
+}
+
+.airstrip-a {
+  left: calc(42% - 3px);
+}
+
+.airstrip-b {
+  left: calc(58% - 3px);
+}
+
+.page-content {
+  position: absolute;
+  left: 50vw;
+  top: 0;
+  z-index: 100;
+  width: 90%;
+  height: 100%;
+  line-height: 1.6;
+  transform: translateX(-50%);
+  /* background: rgba(255, 0, 0, 0.5); */
+}
+
+.text-block {
+  position: absolute;
+  width: 50%;
+  text-align: center;
+}
+
+.airplane-scroll-timeline {
+  position: relative;
+  height: 7000px;
+  margin: 200px 0;
+  /* border: 10px dashed yellow; */
+}
+
+.airplane {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100px;
+  transform: rotate(180deg);
+  will-change: offset-distance;
+  offset-distance: 100%;
+  offset-rotate: auto 90deg;
+  offset-path: path(
+    "M 538.86609,6996.6616 C 536.66216,6788.2478 557.43826,6422.352 554.55591,6149.8291 552.53436,5958.6943 254.57383,5941.3348 114.98514,5837.0227 -110.41156,5668.5878 20.449542,5433.9675 444.86936,5169.5547 610.23264,5048.2471 831.99985,4939.663 993.3144,4749.7781 1117.8908,4603.1381 968.91897,4448.9448 582.48164,4106.4299 432.06575,3973.1103 155.05311,3803.2757 55.745961,3584.5701 -154.33803,3183.46 432.24446,3015.1727 425.81,3015.85 870.64,2913.2 983.49,2764.92 983.49,2764.92 1267.42,2445.55 496.53,2118.58 496.53,2118.58 237.62,2006.42 182.49,1822.03 182.49,1822.03 -5.24,1295.45 395.39,1206.1 502.03,1255.07 c 65,29.84 105.64,109.85 90,179.91 C 556.97,1592.01 357.37,1586.3 357.37,1586.3 70.32,1586.3 16.7,1392.4 16.7,1392.4 -68.45,1107.25 231.91,858.22 231.91,858.22 541.72,612.52 523.89,221.69 523.89,221.69 V 0"
+  );
+}
+
+.airplane[data-direction="up"] {
+  transform: rotate(0deg);
+}
+
+.track {
+  position: absolute;
+  left: 50vw;
+  top: 0;
+  width: 1048px;
+  transform: translateX(-50%);
+}
+
+.flight-path {
+  stroke: white;
+  stroke-width: 7px;
+  stroke-dasharray: 14px;
+  fill: none;
+}
+
+.hello {
+  fill: white;
+  transform-origin: 388px 1431px;
+  will-change: transform, opacity;
+}
+
+.title {
+  font-size: 40px;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.gbc-img {
+  width: 50%;
+  border: 3px solid white;
+  border-radius: 20px;
+  margin-bottom: 10px;
+}
+
+.education {
+  right: 40%;
+  top: 38%;
+}
+
+.skills {
+  right: 10%;
+  top: 48%;
+}
+
+.skills-logo {
+  width: 100px;
+  margin: 20px;
+}
+
+.experience {
+  right: 50%;
+  top: 61%;
+  text-align: -webkit-center;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  justify-items: center;
+  margin-bottom: 50px;
+}
+
+.exp-role {
+  border: 3px solid white;
+  margin: 50px;
+  border-radius: 34% 64% 77% 26% / 73% 54% 45% 19%;
+  width: 260px;
+  height: 180px;
+  align-content: center;
+  transition: 0.5s ease-out;
+  box-shadow: 1px 2px 10px grey;
+  background-color: #005a9c;
+}
+
+.role-h1 {
+  font-size: 12px;
+}
+
+.role-h2 {
+  font-size: 10px;
+}
+
+.role-desc {
+  margin: 10px 30px 10px 30px;
+  text-align: left;
+}
+
+#role1 {
+  margin-right: 160px;
+}
+
+#role1:hover {
+  transform: translateX(60%) scale(3);
+  border-radius: 50px;
+}
+
+#role1:hover #role1-title {
+  display: none;
+}
+
+#role1:hover #role1-content {
+  display: block;
+}
+
+#role1-content {
+  display: none;
+  font-size: 7px;
+}
+
+#role2 {
+  margin-left: 160px;
+}
+
+#role2:hover {
+  transform: translateX(60%) scale(3);
+  border-radius: 50px;
+}
+
+#role2:hover #role2-title {
+  display: none;
+}
+
+#role2:hover #role2-content {
+  display: block;
+}
+
+#role2-content {
+  display: none;
+  font-size: 7px;
+}
+
+#role3 {
+  margin-right: 160px;
+}
+
+#role3:hover {
+  transform: translateX(60%) scale(3);
+  border-radius: 50px;
+}
+
+#role3:hover #role3-title {
+  display: none;
+}
+
+#role3:hover #role3-content {
+  display: block;
+}
+
+#role3-content {
+  display: none;
+  font-size: 7px;
+}
+
+hr {
+  border: 1px dashed white;
+  margin: 5px 10px 5px 10px;
+}
